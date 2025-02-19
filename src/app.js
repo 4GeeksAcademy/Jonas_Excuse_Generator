@@ -12,13 +12,12 @@ function excuseGenerator () {
     return `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
 }
 
-// Función para obtener una imagen aleatoria de la carpeta "img"
+
 function getRandomImage() {
-  let randomNumber = Math.floor(Math.random() * 9) + 1; // Números del 1 al 13
-  return `img/${randomNumber}.jpg`; // Asegúrate de que las imágenes están numeradas como 1.jpg, 2.jpg, etc.
+  let randomNumber = Math.floor(Math.random() * 9) + 1;
+  return `img/${randomNumber}.jpg`;
 }
 
-// Función que actualiza la excusa y la imagen
 function updateExcuseAndImage() {
   let excuseElement = document.getElementById("excuse");
   let imageElement = document.getElementById("excuse-image");
@@ -27,12 +26,11 @@ function updateExcuseAndImage() {
   imageElement.src = getRandomImage();
 }
 
-
 // Ejecutar cuando la página carga
 window.onload = function() {
-  let button = document.querySelector("button");
+  let button = document.querySelector(".btn-primary");
 
-  updateExcuseAndImage(); // Mostrar la primera excusa e imagen
+  updateExcuseAndImage(); // Hay que llamar a la función para que muestre la primera excusa e imagen
 
   // Evento para actualizar excusa e imagen al pulsar el botón
   button.addEventListener("click", updateExcuseAndImage);
